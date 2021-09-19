@@ -3,7 +3,7 @@ import tempfile,os,shutil
 from pathlib import Path
 from anki.collection import Collection as aopen
 from anki.exporting import AnkiPackageExporter
-def add_cards_export_col():
+def add_cards_export_deck():
     nam=r'C:\Users\Admin\AppData\Roaming\Anki2\swjz\collection.anki2'
     col = aopen(nam)
     # create a new deck
@@ -21,7 +21,7 @@ def add_cards_export_col():
     note["entry"] = "1"
     note["comment"] = '<img align="baseline" height="100" src="Images/image27372.jpeg" width="100"/>'
     col.addNote(note)
-    # export collection .colpkg
+    # export deck .apkg
     e = AnkiPackageExporter(col)
     # write to Temp dir
     fd, newname = tempfile.mkstemp(prefix="ankitest", suffix=".apkg")
